@@ -9,5 +9,5 @@ class Lcd
     Lcd();
     ~Lcd();
     void setWelcomeScreen();
-    void displayRfidCode(unint8_t* id);
+    void displayRfidCode(uint8_t* id);
 };

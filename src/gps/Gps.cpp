@@ -20,7 +20,7 @@ void Gps::run()
     read();
     if ( newNMEAreceived() ) {
         parse(lastNMEA());
-        printf("Time: %i:%i:%i.%i", getHours, getMinutes, getSeconds, getMilliseconds);
+        printf("Time: %i:%i:%i.%i", getHours(), getMinutes(), getSeconds(), getMilliseconds());
     }
 }
 

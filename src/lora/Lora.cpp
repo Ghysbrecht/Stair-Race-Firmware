@@ -1,6 +1,7 @@
 #include "Lora.h"
 #include "settings.h"
-#include "packet"
+#include "packet.h"
+
 
 Lora::Lora()
 {

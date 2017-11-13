@@ -3,7 +3,7 @@
 #include "mbed.h"
 #include "Gps.h"
 
-class Gps : public Adafruit_GPS
+class Time
 {
     private:
         int hours, minutes, seconds, milliseconds;

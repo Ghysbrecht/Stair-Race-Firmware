@@ -3,15 +3,15 @@
 #include "mbed.h"
 #include "Gps.h"
 
-class Time
+class MyTime
 {
     private:
         int hours, minutes, seconds, milliseconds;
 
     public:
-    Time(Gps* gps);
-    Time(int hours, int minutes, int seconds, int milliseconds);
-    ~Time();
+    MyTime(Gps* gps);
+    MyTime(int hours, int minutes, int seconds, int milliseconds);
+    ~MyTime();
 
     int getHours();
     int getMinutes();

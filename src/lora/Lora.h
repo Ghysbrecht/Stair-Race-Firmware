@@ -1,16 +1,17 @@
 #pragma once
 
 #include "mbed.h"
-#include "Time.h"
+#include "myTime.h"
 #include "Simple-LoRaWAN.h"
+
 
 class Lora
 {
     private:
-        Node* node;
+        SimpleLoRaWAN::Node* node;
 
     public:
         Lora();
         ~Lora();
-        void sendTimeAndId(Time time, unint8_t* id);
+        void sendTimeAndId(MyTime* time, uint8_t* id);
 };

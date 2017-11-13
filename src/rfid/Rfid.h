@@ -5,7 +5,7 @@
 class Rfid
 {
     private:
-        int cardPresent;
+        int _cardPresent;
         uint8_t uid[8];
 
     public:

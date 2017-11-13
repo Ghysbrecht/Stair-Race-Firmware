@@ -10,10 +10,10 @@ Lcd::~Lcd()
 
 }
 
-void setWelcomeScreen(){
+void Lcd::setWelcomeScreen(){
 
 }
 
-void displayRfidCode(uint8_t* id){
+void Lcd::displayRfidCode(uint8_t* id){
     
 }

@@ -2,16 +2,16 @@
 
 using namespace std;
 
-uint8_t* Packet::build(Time* time, unint8_t* id)
+uint8_t* Packet::build(MyTime* time, uint8_t* id)
 {
     static uint8_t txBuffer[14];
 
     //Time
-    txBuffer[0] = time->getHours & 0xFF;
-    txBuffer[1] = time->getMinutes & 0xFF;
-    txBuffer[2] = time->getSeconds & 0xFF;
-    txBuffer[3] = time->milliseconds & 0xFF;
-    txBuffer[4] = ( time->milliseconds >> 8 ) & 0xFF;
+    txBuffer[0] = time->getHours() & 0xFF;
+    txBuffer[1] = time->getMinutes() & 0xFF;
+    txBuffer[2] = time->getSeconds() & 0xFF;
+    txBuffer[3] = time->getMilliseconds() & 0xFF;
+    txBuffer[4] = ( time->getMilliseconds() >> 8 ) & 0xFF;
 
     //Id
     txBuffer[6] = id[0];

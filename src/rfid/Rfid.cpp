@@ -5,14 +5,14 @@ Rfid::Rfid()
     //Init RFID library
 }
 
-Lora::~Lora()
+Rfid::~Rfid()
 {
 }
 
-int cardPresent(){
-    return cardPresent;
+int Rfid::cardPresent(){
+    return _cardPresent;
 }
 
-uint8_t* getCardUid(){
+uint8_t* Rfid::getCardUid(){
     return uid;
 }

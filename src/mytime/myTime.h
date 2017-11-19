@@ -2,6 +2,7 @@
 
 #include "mbed.h"
 #include "Gps.h"
+#include "DsRTC.h"
 
 class MyTime
 {
@@ -10,6 +11,7 @@ class MyTime
 
     public:
     MyTime(Gps* gps);
+    MyTime(DsRTC* dsRtc);
     MyTime(int hours, int minutes, int seconds, int milliseconds);
     ~MyTime();
 

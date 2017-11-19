@@ -17,5 +17,5 @@ Lora::~Lora()
 
 void Lora::sendTimeAndId(MyTime* time, uint8_t* id){
     uint8_t* packet = Packet::build(time, id);
-    node->send(packet, 14);
+    node->send(packet, 14,true);
 }

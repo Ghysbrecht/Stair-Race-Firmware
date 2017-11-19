@@ -20,7 +20,22 @@ void Gps::run()
     read();
     if ( newNMEAreceived() ) {
         parse(lastNMEA());
-        printf("Time: %i:%i:%i.%i", getHours(), getMinutes(), getSeconds(), getMilliseconds());
+    }
+}
+
+void Gps::debug(){
+    printf("-------------------------------------------------------\n");
+    printf("Time: %d:%d:%d.%u\n", hour, minute, seconds, milliseconds);
+    printf("Date: %d/%d/20%d\n", day, month, year);
+    printf("Fix: %d\n", (int) fix);
+    printf("Quality: %d\n", (int) fixquality);
+    if (fix) {
+        printf("Location: %5.6f%c, %5.6f%c\n", latitude, lat, longitude, lon);
+        printf("HDOP: %5.2f\n", HDOP);
+        printf("Speed: %5.2f knots\n", speed);
+        printf("Angle: %5.2f\n", angle);
+        printf("Altitude: %5.2f\n", altitude);
+        printf("Satellites: %d\n", satellites);
     }
 }
 

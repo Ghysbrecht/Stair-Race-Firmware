@@ -1,18 +1,20 @@
 #pragma once
 
 #include "mbed.h"
-#include "MBed_Adafruit_GPS.h"
+#include "I2C.h"
 
-class Gps : public Adafruit_GPS
+class DsRTC
 {
+    protected:
+    I2C i2c;
+
     public:
-    Gps(Serial* serial);
-    ~Gps();
-    void run();
-    void debug();
-    
+    DsRTC();
+
     int getHours();
     int getMinutes();
     int getSeconds();
     int getMilliseconds();
+    int getRegVal(char addr);
+    int bcdToDec(int val);
 };

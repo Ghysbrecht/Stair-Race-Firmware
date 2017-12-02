@@ -1,6 +1,6 @@
 #include "DsRTC.h"
 
-#define ADDR  0x68
+#define ADDR  0xD0
 
 DsRTC::DsRTC() : i2c(PTE25, PTE24){
 

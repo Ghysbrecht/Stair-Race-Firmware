@@ -7,12 +7,12 @@ class Rfid
 {
     private:
         int _cardPresent;
-        MFRC522 RfChip; 
+        MFRC522 RfChip;
 
     public:
         Rfid();
         ~Rfid();
         int cardPresent();
-        uint8_t* getCardUid();
+        void getCardUid(uint8_t *uid);
 
 };

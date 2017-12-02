@@ -7,7 +7,7 @@ Lora::Lora()
 {
     node = new SimpleLoRaWAN::ABP::Node(devAddr, nwksKey, appKey);
     node->disableLinkCheck();
-    node->setSpreadFactor(DR_SF7);
+    node->setSpreadFactor(DR_SF9);
 }
 
 Lora::~Lora()
@@ -17,5 +17,5 @@ Lora::~Lora()
 
 void Lora::sendTimeAndId(MyTime* time, uint8_t* id){
     uint8_t* packet = Packet::build(time, id);
-    node->send(packet, 14,true);
+    node->send(packet, 13);
 }

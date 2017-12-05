@@ -1,11 +1,5 @@
 #include "myTime.h"
 
-MyTime::MyTime(Gps* gps)
-    : MyTime(gps->getHours(), gps->getMinutes(), gps->getSeconds(), gps->getMilliseconds())
-{
-
-}
-
 MyTime::MyTime(DsRTC* dsRtc)
     : MyTime(dsRtc->getHours(), dsRtc->getMinutes(), dsRtc->getSeconds(), dsRtc->getMilliseconds())
 {

@@ -1,6 +1,5 @@
 #include "mbed.h"
 #include "rtos.h"
-#include "Gps.h"
 #include "Buzzer.h"
 #include "Lcd.h"
 #include "Lora.h"
@@ -11,12 +10,9 @@
 DigitalOut led1(LED1);
 DigitalOut led2(LED2);
 
-//Serial gps_serial(PTC17,PTC16);
 Serial pc(USBTX, USBRX);
-//Gps gps(&gps_serial);
 Rfid rfid;
-//Lora lora;
-//Lcd lcd;
+Lora lora(&pc);
 Buzzer buzzer;
 DsRTC dsRtc;
 
@@ -25,9 +21,8 @@ Thread gps_thread;
 void show_gps_info()
 {
   while(true){
-    //gps.debug();
     led1 = !led1;
-    Thread::wait(2000);
+    Thread::wait(500);
   }
 }
 
@@ -35,14 +30,12 @@ void setup(){
     led2 = 1;
     pc.baud(9600);
     pc.printf("Starting Stair Race...\n");
-    //lcd.setWelcomeScreen();
     gps_thread.start(show_gps_info);
 }
 
 int main() {
     setup();
     while (true) {
-        //gps.run();
         if(rfid.cardPresent()){
             led2 = 0;
             pc.printf("Card present!\n");
@@ -60,8 +53,7 @@ int main() {
 
             //Send the time and UID
             pc.printf("Sending packet\n");
-            //lora.sendTimeAndId(&time, uid);
-            //lcd.displayRfidCode(uid);
+            lora.sendTimeAndId(&time, uid);
             buzzer.completeSound();
             Thread::wait(1000);
             pc.printf("Done!\n");

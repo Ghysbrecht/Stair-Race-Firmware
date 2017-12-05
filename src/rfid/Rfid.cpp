@@ -4,8 +4,8 @@
 #define SPI_MOSI    PTD2
 #define SPI_MISO    PTD3
 #define SPI_SCLK    PTD1
-#define SPI_CS      PTC7
-#define MF_RESET    PTC5
+#define SPI_CS      PTD0
+#define MF_RESET    PTC4
 
 DigitalIn key(PTB10,PullDown);
 
